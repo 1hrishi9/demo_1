@@ -42,7 +42,7 @@ pipeline {
               sudo mv /mnt/apache-tomcat-8.5.93/webapps/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.93/webapps/studentapp.war
               sudo chmod -R +x /mnt/apache-tomcat-8.5.93/bin/
               cd /mnt/apache-tomcat-8.5.93/bin/
-              sudo ./catalina.sh 
+              sudo ./startup.sh 
               '''
             }
         }
