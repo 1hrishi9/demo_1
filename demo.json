@@ -17,8 +17,8 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-               apt install maven
-               cd /home/ubuntu/workspace/studentapp-ui/
+               sudo apt install maven -y
+               cd /home/ubuntu/workspace/project/studentapp-ui/
                mvn clean
                mvn package
                 '''
