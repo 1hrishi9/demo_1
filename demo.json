@@ -2,21 +2,25 @@ pipeline {
     agent {
         node {
             label 'lable1'
-            customWorkspace '/home/ubuntu/a/workspace'
         }
 
     }
     stages {
         stage('git commit') {
             steps {
-                git 'https://github.com/swapnibrad/studentapp-ui.git'
+              sh '''
+         git clone https://github.com/1hrishi9/studentapp-ui.git
+        
+        '''  
             }
         }
         stage('build') {
             steps {
                 sh '''
-                mkdir github_dir
-                echo "successfully copied file"
+               apt install maven
+               cd /home/ubuntu/workspace/studentapp-ui/
+               mvn clean
+               mvn package
                 '''
             }
         }
@@ -30,18 +34,7 @@ pipeline {
               echo "successfully deployed"
             }
         }
-        stage('run script') {
-            steps {
-            script {
-                def name = "cloudblitz"
-                def gender = "male"
-                if(gender == "male") {
-                    echo "Mr. $name"    
-                } else {
-                    echo "Mrs. $name"
-                }
-            }
-        }
+        
         }
     }
 }
