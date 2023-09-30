@@ -33,7 +33,7 @@ pipeline {
             steps {
               sh '''
               
-              wget -P /mnt https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip
+              sudo wget -P /mnt https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip
               
               cd /mnt
               sudo apt install unzip -y
