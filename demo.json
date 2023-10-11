@@ -32,15 +32,15 @@ pipeline {
         stage('deploy') {
             steps {
               sh '''
-            wget -P /mnt https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip
+            wget -P /mnt https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.94/bin/apache-tomcat-8.5.94.zip
               
               cd /mnt
                apt install unzip -y
-               unzip apache-tomcat-8.5.93.zip
-               cp  /home/ubuntu/workspace/project/studentapp-ui/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.93/webapps/
-               mv /mnt/apache-tomcat-8.5.93/webapps/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.93/webapps/studentapp.war
-               chmod -R +x /mnt/apache-tomcat-8.5.93/bin/
-              cd /mnt/apache-tomcat-8.5.93/bin/
+               unzip apache-tomcat-8.5.94.zip
+               cp  /home/ubuntu/workspace/project/studentapp-ui/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.94/webapps/
+               mv /mnt/apache-tomcat-8.5.94/webapps/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.93/webapps/studentapp.war
+               chmod -R +x /mnt/apache-tomcat-8.5.94/bin/
+              cd /mnt/apache-tomcat-8.5.94/bin/
                ./startup.sh  
             '''
             }
