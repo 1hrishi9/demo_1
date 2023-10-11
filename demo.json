@@ -33,7 +33,7 @@ pipeline {
             steps {
               sh '''
               ROOT_PASSWORD="123"
-              sudo -S <<EOF
+              sudo -c <<EOF
               sudo wget -P /mnt https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.zip
               
               cd /mnt
