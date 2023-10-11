@@ -18,7 +18,7 @@ pipeline {
                ROOT_PASSWORD="123"
                echo "$ROOT_PASSWORD" | su -c "apt update -y && apt install maven -y"
                
-               cd /home/ubuntu/workspace/project/studentapp-ui/
+               cd /var/lib/jenkins/workspace/project/studentapp-ui/
                mvn clean
                mvn package
                 '''
