@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                ROOT_PASSWORD="123"
-               echo "$ROOT_PASSWORD" | su -c "apt update -y && apt install maven -y"
+               echo "$ROOT_PASSWORD" | su -c "apt update -y && apt install maven -y &&  apt install unzip -y"
                
                cd /var/lib/jenkins/workspace/project/studentapp-ui/
                mvn clean
@@ -35,7 +35,7 @@ pipeline {
             wget  https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.94/bin/apache-tomcat-8.5.94.zip
               
               
-               apt install unzip -y
+              
                unzip apache-tomcat-8.5.94.zip
                cp  /home/ubuntu/workspace/project/studentapp-ui/target/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/
                mv /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.93/webapps/studentapp.war
